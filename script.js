@@ -17,6 +17,7 @@ async function getCalendarUrl() {
                 document.getElementById("link").innerHTML = `<a href=${json.calendarUrl}>link</a>`;
                 deleteParams();
             } else {
+                await sleep(5000);
                 getCalendarUrl();
             }
         } catch (e) {
