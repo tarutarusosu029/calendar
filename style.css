@@ -4,6 +4,7 @@
     font-display: swap;
 }
 
+
 body{
     background:#C9DCEA;
     margin:0;
@@ -11,8 +12,9 @@ body{
     text-align:center;
 }
 
+
 h1{
-    font-family:"Makinas",sans-serif;
+    font-family:sans-serif;
     color:#6C7B91;
     margin-top:30px;
 }
