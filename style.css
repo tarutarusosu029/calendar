@@ -41,6 +41,7 @@ h1 {
 }
 
 select {
+    color: #6C7B91;
     padding: 8px;
     border-radius: 10px;
     border: none;
