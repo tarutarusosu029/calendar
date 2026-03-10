@@ -1,25 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
 @font-face {
     font-family: "Makinas";
     src: url("fonts/Makinas-4-Square.otf") format("opentype");
     font-display: swap;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
-    background: radial-gradient(#E6EFF6, #C9DCEA);
     margin: 0;
     font-family: sans-serif;
     text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #6C7B92;
+    background: radial-gradient(#E6EFF6, #C9DCEA);
 }
 
 h1 {
-    color: #6C7B91;
     margin-top: 30px;
 }
 
+main {
+    flex: 1;
+}
+
 .card {
-    margin: 20px auto;
-    padding: 20px;
-    width: 80%;
+    margin: 10px auto;
+    padding: 2vh 3vw;
+    width: 100%;
     max-width: 500px;
     border-radius: 30px;
     background: radial-gradient(#D5E0E8, #E8F2F7);
@@ -34,17 +50,13 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-form span {
-    color: #6C7B91;
+    gap: 16px;
+    padding: 10px 0;
 }
 
 select {
-    color: #6C7B91;
-    padding: 10px;
+    color: #6C7B92;
+    padding: 12px 14px;
     border-radius: 20px;
     border: none;
     font-size: 16px;
@@ -79,16 +91,10 @@ input[type=submit] {
 }
 
 footer {
-    margin-top: 40px;
-    color: #6C7B91;
+    margin-bottom: 10vh;
 }
 
 .copy {
     font-size: 1em;
 }
-
-.copy span {
-    font-size: 1.5em;
-}
-
 /* ©2026 test.resavation326 */
