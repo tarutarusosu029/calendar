@@ -34,7 +34,7 @@ main {
 .card {
     margin: 20px auto;
     padding: 20px;
-    width: 80%;
+    width: 100%;
     max-width: 500px;
     border-radius: 30px;
     background: radial-gradient(#D5E0E8, #E8F2F7);
