@@ -62,7 +62,7 @@ function hideLoadingAnimation() {
 }
 
 function highlight(element) {
-    return element.document.classList.add('highlight');
+    return element.classList.add('highlight');
 }
 
 //©2026 test.resavation326
