@@ -17,7 +17,7 @@ body {
     margin: 0px;
     font-family: sans-serif;
     text-align: center;
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,7 +57,7 @@ main {
 
 select {
     color: #6C7B92;
-    padding: 10px 15px;
+    padding: 10px 12px;
     border-radius: 50px;
     border: none;
     font-size: 16px;
@@ -69,7 +69,7 @@ select {
 }
 
 input[type=submit] {
-    padding: 10px 15px;
+    padding: 8px 20px;
     border-radius: 50px;
     border: none;
     background: #6C7B91;
@@ -78,8 +78,24 @@ input[type=submit] {
     cursor: pointer;
 }
 
+a {
+    color: #6C7B91;
+}
+
+.highlight {
+    box-shadow: -5px -5px 30px 0px rgba(100, 200, 255, 0.8), 5px 5px 50px 0px rgba(0, 100, 40, 0.3) !important;
+}
+
 #link {
-    margin-top: 20px;
+    margin: 10px auto;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 30px;
+    background: radial-gradient(#D5E0E8, #E8F2F7);
+    border: 2px solid #DEE9F3;
+    box-shadow:
+        -5px -5px 30px rgba(255, 255, 255, 0.8),
+        5px 5px 50px rgba(0, 40, 100, 0.3);
 }
 
 #loading {

@@ -14,7 +14,9 @@ async function getCalendarUrl() {
             const json = await res.json();
             if (json.success && json.calendarUrl != null) {
                 hideLoadingAnimation();
-                document.getElementById("link").innerHTML = `<a href=${json.calendarUrl}>link</a>`;
+                element = document.getElementById('link');
+                highlight(element);
+                document.getElementById("link").innerHTML = `<p><a href=${json.calendarUrl}>カレンダーを登録</a></p>`;
                 deleteParams();
             } else {
                 await sleep(5000);
@@ -51,12 +53,16 @@ function hideDialog() {
 
 function showLoadingAnimation() {
     const screenMasc = document.getElementById("");
-    const loadingAnimation = document.getElementById("loading").innerHTML = "<div id=''><p>LOADING...</p></div>";
+    const loadingAnimation = document.getElementById("link").innerHTML = "<p>Loading...</p>";
 }
 
 function hideLoadingAnimation() {
     const screenMasc = document.getElementById("");
-    const loadingAnimation = document.getElementById("loading").innerHTML = "<div id=''><p>SUCCESS</p></div>";
+    const loadingAnimation = document.getElementById("link").innerHTML = "<p>Success</p>";
+}
+
+function highlight(element) {
+    return element.classList.add('highlight');
 }
 
 //©2026 test.resavation326
