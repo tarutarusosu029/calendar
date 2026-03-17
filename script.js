@@ -67,7 +67,7 @@ function highlight(element) {
 }
 
 function toggleElementHide(element) {
-    return element.classList.toggle('high');
+    return element.classList.toggle('hide');
 }
 
 //©2026 test.resavation326
