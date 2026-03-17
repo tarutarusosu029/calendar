@@ -9,12 +9,13 @@ async function getCalendarUrl() {
     if (userGrade && userClass && userGrade != 0 && userClass != 0) {
         try {
             const api = `https://script.google.com/macros/s/AKfycbx3zfsa6aJeL8ql97_q0EpxP1vvL7e5LJe_TYnucMHckyhZ_UIa_kz5obdE8NTOuCco/exec?action=getCalendar&userGrade=${userGrade}&userClass=${userClass}`;
+            element = document.getElementById('link');
+            toggleElementHide(element);
             showLoadingAnimation();
             const res = await fetch(api);
             const json = await res.json();
             if (json.success && json.calendarUrl != null) {
                 hideLoadingAnimation();
-                element = document.getElementById('link');
                 highlight(element);
                 document.getElementById("link").innerHTML = `<p><a href=${json.calendarUrl}>カレンダーを登録</a></p>`;
                 deleteParams();
@@ -63,6 +64,10 @@ function hideLoadingAnimation() {
 
 function highlight(element) {
     return element.classList.add('highlight');
+}
+
+function toggleElementHide(element) {
+    return element.classList.toggle('high');
 }
 
 //©2026 test.resavation326
