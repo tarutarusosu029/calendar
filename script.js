@@ -26,6 +26,7 @@ async function getCalendarUrl() {
         } catch (e) {
             console.log(e);
             showDialog("エラー", "時間をおいてから\nもう一度やり直してください。");
+            window.alert("エラー\n時間をおいてからもう一度やり直してください。");
         }
     }
 }
