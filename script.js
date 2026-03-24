@@ -68,7 +68,8 @@ function highlight(element) {
 }
 
 function toggleElementHide(element) {
-    return element.classList.toggle('hide');
+    const classes = ["hide", "anim-box", "popup", "js-anim", "is-animated"];
+    classes.forEach(className => element.classList.toggle(className));
 }
 
 //©2026 test.resavation326
