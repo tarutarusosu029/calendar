@@ -72,4 +72,4 @@ function toggleElementHide(element) {
     classes.forEach(className => element.classList.toggle(className));
 }
 
-//©2026 test.resavation326
+//©2026 tarutarusosu029
