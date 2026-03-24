@@ -9,15 +9,16 @@ async function getCalendarUrl() {
     if (userGrade && userClass && userGrade != 0 && userClass != 0) {
         try {
             const api = `https://script.google.com/macros/s/AKfycbzu83oiW4V8BkKVkwcgB4SyrE4EIf_7F6IwKD70tqO8CbkYehF3JyF1EcRkk83M-cOd/exec?action=getCalendar&userGrade=${userGrade}&userClass=${userClass}`;
-            element = document.getElementById('link');
+            element = document.getElementById('status');
             toggleElementHide(element);
-            showLoadingAnimation();
+            updateGuide(`<p>しばらくお待ちください</p>`);
+            updateStatus(`<p>読み込み中...</p>`);
             const res = await fetch(api);
             const json = await res.json();
             if (json.success && json.calendarUrl != null) {
-                hideLoadingAnimation();
                 highlight(element);
-                document.getElementById("link").innerHTML = `<p><a href=${json.calendarUrl}>カレンダーを登録</a></p>`;
+                updateGuide(`<p>登録ボタンを押してください</p>`);
+                updateStatus(`<p><a href=${json.calendarUrl}>カレンダーを登録</a></p>`);
                 deleteParams();
             } else {
                 await sleep(5000);
@@ -25,42 +26,31 @@ async function getCalendarUrl() {
             }
         } catch (e) {
             console.log(e);
-            showDialog("エラー", "時間をおいてから\nもう一度やり直してください。");
+            updateStatus(`<p><span style="font-weight:bold;">エラーが発生しました。</span><br>時間をおいてから、<br>もう一度やり直してください。</p>`);
             window.alert("エラー\n時間をおいてからもう一度やり直してください。");
         }
     }
 }
+
+window.onload = getCalendarUrl();
 
 function deleteParams() {
     const url = new URL(window.location.href);
     window.history.replaceState({}, '', url.pathname);
 }
 
-window.onload = getCalendarUrl();
+
 
 function getParameter(paramName) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(paramName);
 }
 
-function showDialog(title, message) {
-    const screenMasc = document.getElementById("");
-    const dialog = document.getElementById("");
+function updateStatus(html) {
+    document.getElementById("status").innerHTML = html;
 }
-
-function hideDialog() {
-    const screenMasc = document.getElementById("");
-    const dialog = document.getElementById("");
-}
-
-function showLoadingAnimation() {
-    const screenMasc = document.getElementById("");
-    const loadingAnimation = document.getElementById("link").innerHTML = "<p>Loading...</p>";
-}
-
-function hideLoadingAnimation() {
-    const screenMasc = document.getElementById("");
-    const loadingAnimation = document.getElementById("link").innerHTML = "<p>Success</p>";
+function updateGuide(html) {
+    document.getElementById("guide").innerHTML = html;
 }
 
 function highlight(element) {
@@ -71,5 +61,4 @@ function toggleElementHide(element) {
     const classes = ["hide", "anim-box", "popup", "js-anim", "is-animated"];
     classes.forEach(className => element.classList.toggle(className));
 }
-
 //©2026 tarutarusosu029
