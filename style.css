@@ -83,7 +83,8 @@ a {
 }
 
 .highlight {
-    box-shadow: -5px -5px 30px 0px rgba(100, 200, 255, 0.3), 5px 5px 50px 0px rgba(0, 100, 40, 0.1) !important;
+    box-shadow: -5px -5px 30px 0px rgba(100, 200, 255, 0.3),
+        5px 5px 50px 0px rgba(0, 100, 40, 0.1) !important;
 }
 
 .hide {
@@ -111,9 +112,7 @@ a {
     }
 }
 
-
-
-#link {
+#status {
     margin: 10px auto;
     width: 100%;
     max-width: 500px;
@@ -135,11 +134,8 @@ a {
 }
 
 footer {
+    font-size: 0.9em;
     margin-bottom: 10vh;
-}
-
-.copy {
-    font-size: 1em;
 }
 
 /* ©2026 tarutarusosu029 */
