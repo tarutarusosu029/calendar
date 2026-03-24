@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <title>単元テストカレンダー</title>
 </head>
 
@@ -47,8 +48,16 @@
 
             <div class="hide" id="status"></div>
         </div>
+        <img class="hide" id="QRcode-img" src="img/QR.png">
     </main>
     <footer>
+        <div style="text-align: end;">
+            <label>
+                <input type="checkbox" style="appearance: none;" id="QRcode-box"
+                    onchange="toggleElementHide(document.getElementById('QRcode-img'))"></input>
+                <span class="drop material-icons">qr_code_2</span>
+            </label>
+        </div>
         <p>このサービスは個人が制作した非公式のサービスです。</p>
         <p>&copy; 2026 tarutarusosu029</p>
     </footer>

@@ -46,6 +46,19 @@ main {
         5px 5px 50px rgba(0, 40, 100, 0.3);
 }
 
+.drop {
+    padding: 2%;
+    border-radius: 100%;
+    background: radial-gradient(#D5E0E8, #E8F2F7);
+    border: 2px solid #DEE9F3;
+    box-shadow: -5px -5px 30px 0px rgba(100, 200, 255, 0.5),
+        5px 5px 50px 0px rgba(0, 100, 40, 0.1)
+}
+
+span.drop.material-icons {
+    font-size: 3em;
+}
+
 
 .form {
     display: flex;

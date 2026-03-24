@@ -32,12 +32,14 @@ async function getCalendarUrl() {
     }
 }
 
+window.onload = getCalendarUrl();
+
 function deleteParams() {
     const url = new URL(window.location.href);
     window.history.replaceState({}, '', url.pathname);
 }
 
-window.onload = getCalendarUrl();
+
 
 function getParameter(paramName) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -59,5 +61,4 @@ function toggleElementHide(element) {
     const classes = ["hide", "anim-box", "popup", "js-anim", "is-animated"];
     classes.forEach(className => element.classList.toggle(className));
 }
-
 //©2026 tarutarusosu029
