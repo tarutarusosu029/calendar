@@ -8,7 +8,7 @@ async function getCalendarUrl() {
 
     if (userGrade && userClass && userGrade != 0 && userClass != 0) {
         try {
-            const api = `https://script.google.com/macros/s/AKfycbx3zfsa6aJeL8ql97_q0EpxP1vvL7e5LJe_TYnucMHckyhZ_UIa_kz5obdE8NTOuCco/exec?action=getCalendar&userGrade=${userGrade}&userClass=${userClass}`;
+            const api = `https://script.google.com/macros/s/AKfycbzu83oiW4V8BkKVkwcgB4SyrE4EIf_7F6IwKD70tqO8CbkYehF3JyF1EcRkk83M-cOd/exec?action=getCalendar&userGrade=${userGrade}&userClass=${userClass}`;
             element = document.getElementById('link');
             toggleElementHide(element);
             showLoadingAnimation();
