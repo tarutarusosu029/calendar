@@ -46,13 +46,78 @@ main {
         5px 5px 50px rgba(0, 40, 100, 0.3);
 }
 
+.summary {
+    display: block flow;
+    cursor: pointer;
+    text-indent: -1em;
+    padding-left: 1em;
+    word-break: auto-phrase;
+
+    margin: 10px auto;
+    padding: 2vh 3vw;
+    width: 90vw;
+    max-width: 500px;
+    border-radius: 30px;
+    background: radial-gradient(#D5E0E8, #E8F2F7);
+    border: 2px solid #DEE9F3;
+    box-shadow:
+        -5px -5px 30px rgba(255, 255, 255, 0.8),
+        5px 5px 50px rgba(0, 40, 100, 0.3);
+
+    &::-webkit-details-marker {
+        display: none;
+    }
+}
+
+summary::before {
+    content: "Q. ";
+}
+
+.panel {
+    display: block grid;
+    transition: grid-template-rows 0.5s;
+    margin: 10px auto;
+    width: 90vw;
+    max-width: 500px;
+    border-radius: 30px;
+    background: radial-gradient(#D5E0E8, #E8F2F7);
+    border: 2px solid #DEE9F3;
+    box-shadow:
+        -5px -5px 30px rgba(255, 255, 255, 0.8),
+        5px 5px 50px rgba(0, 40, 100, 0.3);
+}
+
+.inner {
+    overflow: hidden;
+}
+
+.inner p {
+    margin: 5%;
+    text-align: start;
+    padding-left: 1.5em;
+    word-break: auto-phrase;
+}
+
+.inner p::before {
+    content: "A. ";
+    margin-left: -1.0em;
+}
+
+.inner p .material-icons {
+    font-size: 1.2em;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+
 .drop {
     padding: 2%;
     border-radius: 100%;
     background: radial-gradient(#D5E0E8, #E8F2F7);
     border: 2px solid #DEE9F3;
-    box-shadow: -5px -5px 30px 0px rgba(100, 200, 255, 0.5),
-        5px 5px 50px 0px rgba(0, 100, 40, 0.1)
+    box-shadow:
+        -5px -5px 30px rgba(255, 255, 255, 0.9),
+        5px 5px 50px rgba(0, 40, 100, 0.4);
 }
 
 span.drop.material-icons {
@@ -93,6 +158,11 @@ input[type=submit] {
 
 a {
     color: #6C7B91;
+}
+
+#status a {
+    color: #6C7B91;
+    text-decoration: none;
 }
 
 .highlight {
