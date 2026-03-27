@@ -39,8 +39,6 @@ function deleteParams() {
     window.history.replaceState({}, '', url.pathname);
 }
 
-
-
 function getParameter(paramName) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(paramName);
@@ -61,4 +59,75 @@ function toggleElementHide(element) {
     const classes = ["hide", "anim-box", "popup", "js-anim", "is-animated"];
     classes.forEach(className => element.classList.toggle(className));
 }
+
+const accordions = document.querySelectorAll('.accordion')
+
+function initializeDetailsAccordion(details) {
+    const summary = details.querySelector('summary')
+    const panel = details.querySelector('summary + *')
+
+    if (!(details && summary && panel)) return
+
+    let isTransitioning = false
+
+    function onOpen() {
+        if (details.open || isTransitioning) return
+        isTransitioning = true
+
+        panel.style.gridTemplateRows = '0fr'
+        details.setAttribute('open', '')
+
+        requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+                panel.style.gridTemplateRows = '1fr'
+            })
+        })
+
+        panel.addEventListener('transitionend', function () {
+            isTransitioning = false
+        }, { once: true })
+    }
+
+    function onClose() {
+        if (!details.open || isTransitioning) return
+        isTransitioning = true
+
+        panel.style.gridTemplateRows = '0fr'
+
+        panel.addEventListener('transitionend', function () {
+            details.removeAttribute('open')
+            panel.style.gridTemplateRows = ''
+            isTransitioning = false
+        }, { once: true })
+    }
+
+    summary.addEventListener('click', function (event) {
+        event.preventDefault()
+
+        if (!details.open) {
+            // 他を全部閉じる
+            accordions.forEach(function (item) {
+                if (item !== details && item.open) {
+                    const otherPanel = item.querySelector('summary + *')
+                    otherPanel.style.gridTemplateRows = '0fr'
+
+                    otherPanel.addEventListener('transitionend', function () {
+                        item.removeAttribute('open')
+                        otherPanel.style.gridTemplateRows = ''
+                    }, { once: true })
+                }
+            })
+
+            onOpen()
+        } else {
+            onClose()
+        }
+    })
+}
+
+// 初期化
+accordions.forEach(function (accordion) {
+    initializeDetailsAccordion(accordion)
+})
+
 //©2026 tarutarusosu029
