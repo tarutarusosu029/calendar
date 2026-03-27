@@ -94,6 +94,7 @@ input[type=submit] {
 
 a {
     color: #6C7B91;
+    text-decoration: none;
 }
 
 .highlight {
