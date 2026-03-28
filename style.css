@@ -70,7 +70,7 @@ main {
 }
 
 summary::before {
-    content: "Q. ";
+    content: "Q.";
 }
 
 .panel {
@@ -99,7 +99,7 @@ summary::before {
 }
 
 .inner p::before {
-    content: "A. ";
+    content: "A.";
     margin-left: -1.0em;
 }
 
