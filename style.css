@@ -54,7 +54,7 @@ main {
     word-break: auto-phrase;
 
     margin: 10px auto;
-    padding: 2vh 3vw;
+    padding: 2vh 4vw;
     width: 90vw;
     max-width: 500px;
     border-radius: 30px;
@@ -107,6 +107,10 @@ summary::before {
     font-size: 1.2em;
     vertical-align: middle;
     display: inline-block;
+}
+
+h2 {
+    margin-top: 2em;
 }
 
 .drop {
