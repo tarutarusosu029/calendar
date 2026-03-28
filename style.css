@@ -47,6 +47,7 @@ main {
 }
 
 .summary {
+    display: block flow;
     cursor: pointer;
     text-indent: -1em;
     padding-left: 1em;
@@ -62,6 +63,10 @@ main {
     box-shadow:
         -5px -5px 30px rgba(255, 255, 255, 0.8),
         5px 5px 50px rgba(0, 40, 100, 0.3);
+
+    &::-webkit-details-marker {
+        display: none;
+    }
 }
 
 summary::before {
