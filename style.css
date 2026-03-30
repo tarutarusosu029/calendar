@@ -70,7 +70,7 @@ main {
 }
 
 summary::before {
-    content: "Q. ";
+    content: "Q.";
 }
 
 .panel {
@@ -99,7 +99,7 @@ summary::before {
 }
 
 .inner p::before {
-    content: "A. ";
+    content: "A.";
     margin-left: -1.0em;
 }
 
@@ -109,6 +109,9 @@ summary::before {
     display: inline-block;
 }
 
+h2 {
+    margin-top: 2em;
+}
 
 .drop {
     padding: 2%;
@@ -218,6 +221,7 @@ a {
 
 footer {
     font-size: 0.9em;
+    margin-top: 5vh;
     margin-bottom: 10vh;
 }
 
