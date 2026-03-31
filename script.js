@@ -2,20 +2,13 @@ const sleep = (time) => new Promise((resolve) => {
     setTimeout((resolve, time));
 });
 
-function setUserAgent() {
-    let input = document.getElementById("inputUserAgent");
-    input.value = window.navigator.userAgent.toLowerCase();
-}
-
-setUserAgent();
-
 async function getCalendarUrl() {
     let userGrade = getParameter("userGrade");
     let userClass = getParameter("userClass");
-
+    let userAgent = window.navigator.userAgent.toLowerCase();
     if (userGrade && userClass && userGrade != 0 && userClass != 0) {
         try {
-            const api = `https://script.google.com/macros/s/AKfycbzu83oiW4V8BkKVkwcgB4SyrE4EIf_7F6IwKD70tqO8CbkYehF3JyF1EcRkk83M-cOd/exec?action=getCalendar&userGrade=${userGrade}&userClass=${userClass}`;
+            const api = `https://script.google.com/macros/s/AKfycbzu83oiW4V8BkKVkwcgB4SyrE4EIf_7F6IwKD70tqO8CbkYehF3JyF1EcRkk83M-cOd/exec?action=getCalendar&userGrade=${userGrade}&userClass=${userClass}&userAgent=${userAgent}`;
             element = document.getElementById('status');
             toggleElementHide(element);
             updateGuide(`<p>しばらくお待ちください</p>`);
