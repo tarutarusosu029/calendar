@@ -105,7 +105,6 @@ function initializeDetailsAccordion(details) {
         event.preventDefault()
 
         if (!details.open) {
-            // 他を全部閉じる
             accordions.forEach(function (item) {
                 if (item !== details && item.open) {
                     const otherPanel = item.querySelector('summary + *')
