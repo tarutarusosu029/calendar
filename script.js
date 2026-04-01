@@ -2,13 +2,6 @@ const sleep = (time) => new Promise((resolve) => {
     setTimeout((resolve, time));
 });
 
-function setUserAgent() {
-    let input = document.getElementById("inputUserAgent");
-    input.value = window.navigator.userAgent.toLowerCase();
-}
-
-setUserAgent();
-
 async function getCalendarUrl() {
     let userGrade = getParameter("userGrade");
     let userClass = getParameter("userClass");
