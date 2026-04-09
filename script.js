@@ -12,7 +12,7 @@ async function getCalendarUrl() {
             element = document.getElementById('status');
             toggleElementHide(element);
             updateGuide(`<p>しばらくお待ちください</p>`);
-            updateStatus(`<p>読み込み中...</p>`);
+            updateStatus(`<div class="loader"></div>`);
             const res = await fetch(api);
             const json = await res.json();
             if (json.success && json.calendarUrl != null) {
