@@ -168,12 +168,15 @@ a {
     text-decoration: none;
 }
 
+#status {
+    justify-content: center;
+}
+
 .loader {
     width: fit-content;
     font-weight: bold;
     font-family: monospace;
-    font-size: 30px;
-    background: linear-gradient(135deg, #0000 calc(50% - 0.5em), #000 0 calc(50% + 0.5em), #0000 0) right/300% 100%;
+    background: linear-gradient(135deg, #D5E0E8 calc(50% - 0.5em), #000 0 calc(50% + 0.5em), #0000 0) right/300% 100%;
     animation: l22 1.5s infinite;
 }
 
