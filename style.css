@@ -178,8 +178,9 @@ a {
 }
 
 .loader::before {
-    content: "Lording... ";
-    color: #0000;
+    font-family: sans-serif;
+    content: "読み込み中...";
+    color: #6C7B91;
     padding: 0 5px;
     background: inherit;
     background-image: linear-gradient(135deg, #000 calc(50% - 0.5em), #fff 0 calc(50% + 0.5em), #000 0);
