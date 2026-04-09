@@ -168,11 +168,8 @@ a {
     text-decoration: none;
 }
 
-#status {
-    justify-content: center;
-}
-
 .loader {
+    margin: auto;
     width: fit-content;
     font-weight: bold;
     font-family: monospace;
