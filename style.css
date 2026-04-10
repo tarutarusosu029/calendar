@@ -172,7 +172,6 @@ a {
     position: relative;
     color: #6C7B91;
     margin: 15px auto;
-    font-weight: bold;
     width: 90%;
     border-radius: 300px;
     background: linear-gradient(135deg, #0000 calc(50% - 0.5em), #6C7B91 0 calc(50% + 0.5em), #0000 0) right/300% 100%;
