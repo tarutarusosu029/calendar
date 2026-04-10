@@ -169,7 +169,7 @@ a {
 }
 
 .loader {
-    position: relative;
+    /*position: relative;*/
     color: #6C7B91;
     margin: 15px auto;
     width: 90%;
