@@ -174,7 +174,7 @@ a {
     font-weight: bold;
     width: 90%;
     background: linear-gradient(135deg, #0000 calc(50% - 0.5em), #6C7B91 0 calc(50% + 0.5em), #0000 0) right/300% 100%;
-    animation: l22 3s infinite;
+    animation: l22 2.5s infinite;
 }
 
 .loader::before {
