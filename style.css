@@ -169,18 +169,21 @@ a {
 }
 
 .loader {
-    border-radius: 300px;
-    margin: 15px auto;
+    position: relative;
+    color: #6C7B91;
+    font-weight: bold;
     width: 90%;
     background: linear-gradient(135deg, #0000 calc(50% - 0.5em), #6C7B91 0 calc(50% + 0.5em), #0000 0) right/300% 100%;
-    animation: l22 3.0s infinite;
+    animation: l22 3s infinite;
 }
 
 .loader::before {
-    font-family: sans-serif;
     content: "読み込み中...";
-    color: #6C7B91;
-    padding: 0 0.5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    color: #0000;
     background: inherit;
     background-image: linear-gradient(135deg, #000 calc(50% - 0.5em), #fff 0 calc(50% + 0.5em), #000 0);
     -webkit-background-clip: text;
