@@ -169,7 +169,6 @@ a {
 }
 
 .loader {
-    /*position: relative;*/
     color: #6C7B91;
     margin: 15px auto;
     width: 90%;
@@ -184,7 +183,7 @@ a {
     padding: 0 0.5px;
     width: 90%;
     background: inherit;
-    background-image: linear-gradient(135deg, #000 calc(50% - 0.5em), #fff 0 calc(50% + 0.5em), #000 0);
+    background-image: linear-gradient(135deg, #6C7B91 calc(50% - 0.5em), #E8F2F7 0 calc(50% + 0.5em), #6C7B91 0);
     -webkit-background-clip: text;
     background-clip: text;
 }
@@ -235,15 +234,6 @@ a {
     box-shadow:
         -5px -5px 30px rgba(255, 255, 255, 0.8),
         5px 5px 50px rgba(0, 40, 100, 0.3);
-}
-
-#loading {
-    margin: 20px auto;
-    width: 300px;
-    color: white;
-    background: #6C7B91;
-    font-size: 150%;
-    border-radius: 10px;
 }
 
 footer {
