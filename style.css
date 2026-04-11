@@ -225,4 +225,23 @@ footer {
     margin-bottom: 10vh;
 }
 
+footer a {
+    margin: 0px 2.5%;
+}
+
+.privacy {
+    margin: 5vw;
+}
+
+.privacy h2 {
+    font-size: 1.25em;
+    margin: 0px;
+}
+
+.privacy p {
+    margin: 5%;
+    text-align: start;
+}
+
+
 /* ©2026 tarutarusosu029 */
