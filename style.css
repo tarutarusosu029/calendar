@@ -168,6 +168,33 @@ a {
     text-decoration: none;
 }
 
+.loader {
+    /*position: relative;*/
+    color: #6C7B91;
+    margin: 15px auto;
+    width: 90%;
+    border-radius: 300px;
+    background: linear-gradient(135deg, #0000 calc(50% - 0.5em), #6C7B91 0 calc(50% + 0.5em), #0000 0) right/300% 100%;
+    animation: l22 2.5s infinite;
+}
+
+.loader::before {
+    content: "読み込み中...";
+    color: #0000;
+    padding: 0 0.5px;
+    width: 90%;
+    background: inherit;
+    background-image: linear-gradient(135deg, #000 calc(50% - 0.5em), #fff 0 calc(50% + 0.5em), #000 0);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+@keyframes l22 {
+    100% {
+        background-position: left
+    }
+}
+
 .highlight {
     box-shadow: -5px -5px 30px 0px rgba(100, 200, 255, 0.3),
         5px 5px 50px 0px rgba(0, 100, 40, 0.1) !important;
