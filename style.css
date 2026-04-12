@@ -21,7 +21,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #6C7B92;
+    color: #6C7B91;
     background: radial-gradient(#E6EFF6, #C9DCEA);
 }
 
@@ -137,7 +137,7 @@ span.drop.material-icons {
 }
 
 select {
-    color: #6C7B92;
+    color: #6C7B91;
     padding: 10px 12px;
     border-radius: 50px;
     border: none;
@@ -169,9 +169,9 @@ a {
 }
 
 .loader {
-    /*position: relative;*/
     color: #6C7B91;
     margin: 15px auto;
+    display: inline-block;
     width: 90%;
     border-radius: 300px;
     background: linear-gradient(135deg, #0000 calc(50% - 0.5em), #6C7B91 0 calc(50% + 0.5em), #0000 0) right/300% 100%;
@@ -182,9 +182,8 @@ a {
     content: "読み込み中...";
     color: #0000;
     padding: 0 0.5px;
-    width: 90%;
     background: inherit;
-    background-image: linear-gradient(135deg, #000 calc(50% - 0.5em), #fff 0 calc(50% + 0.5em), #000 0);
+    background-image: linear-gradient(135deg, #6C7B91 calc(50% - 0.5em), #0000 0 calc(50% + 0.5em), #6C7B91 0);
     -webkit-background-clip: text;
     background-clip: text;
 }
@@ -196,7 +195,7 @@ a {
 }
 
 .highlight {
-    box-shadow: -5px -5px 30px 0px rgba(100, 200, 255, 0.3),
+    box-shadow: -5px -5px 30px 0px rgba(100, 200, 255, 0.2),
         5px 5px 50px 0px rgba(0, 100, 40, 0.1) !important;
 }
 
@@ -237,15 +236,6 @@ a {
         5px 5px 50px rgba(0, 40, 100, 0.3);
 }
 
-#loading {
-    margin: 20px auto;
-    width: 300px;
-    color: white;
-    background: #6C7B91;
-    font-size: 150%;
-    border-radius: 10px;
-}
-
 footer {
     font-size: 0.9em;
     margin-top: 5vh;
@@ -258,11 +248,6 @@ footer a {
 
 .privacy {
     margin: 5vw;
-}
-
-.privacy h1 {
-    font-size: 1.5em;
-    margin: 0px;
 }
 
 .privacy h2 {
