@@ -20,7 +20,7 @@ async function getCalendarUrl() {
                 updateGuide(`<p>登録ボタンを押してください</p>`);
                 updateStatus(`<p><a href=${json.calendarUrl}>カレンダーを登録</a></p>`);
             } else {
-                await sleep(5000);
+                await sleep(2000);
                 location.reload();
             }
         } catch (e) {
