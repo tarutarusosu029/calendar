@@ -13,7 +13,6 @@ async function getCalendarUrl() {
             if (element.classList.contains('hide')) {
                 toggleElementHide(element);
             }
-
             updateGuide(`<p>しばらくお待ちください</p>`);
             updateStatus(`<div class="loader"></div>`);
             const res = await fetch(api);
