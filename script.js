@@ -22,8 +22,8 @@ async function getCalendarUrl() {
                 updateGuide(`<p>登録ボタンを押してください</p>`);
                 updateStatus(`<p><a href=${json.calendarUrl}>カレンダーを登録</a></p>`);
             } else {
-                updateGuide(`<p>新しいカレンダーを作っています...</p>`);
                 console.log("retry");
+                updateGuide(`<p>新しいカレンダーを作っています...</p>`);
                 return getCalendarUrl();
             }
         } catch (e) {
@@ -33,6 +33,7 @@ async function getCalendarUrl() {
             deleteParams();
         }
     }
+    deleteParams();
 }
 
 window.onload = getCalendarUrl;
