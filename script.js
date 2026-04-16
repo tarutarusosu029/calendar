@@ -21,7 +21,7 @@ async function getCalendarUrl() {
                 updateStatus(`<p><a href=${json.calendarUrl}>カレンダーを登録</a></p>`);
             } else {
                 await sleep(5000);
-                getCalendarUrl();
+                location.reload();
             }
         } catch (e) {
             console.log(e);
