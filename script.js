@@ -1,5 +1,5 @@
 const sleep = (time) => new Promise((resolve) => {
-    setTimeout((resolve, time));
+    setTimeout(resolve, time);
 });
 
 async function getCalendarUrl() {
@@ -20,8 +20,9 @@ async function getCalendarUrl() {
                 updateGuide(`<p>登録ボタンを押してください</p>`);
                 updateStatus(`<p><a href=${json.calendarUrl}>カレンダーを登録</a></p>`);
             } else {
+                console.log("retry");
                 await sleep(2000);
-                location.reload();
+                return getCalendarUrl();
             }
         } catch (e) {
             console.log(e);
@@ -32,7 +33,7 @@ async function getCalendarUrl() {
     }
 }
 
-window.onload = getCalendarUrl();
+window.addEventListener("load", getCalendarUrl);
 
 function deleteParams() {
     const url = new URL(window.location.href);
