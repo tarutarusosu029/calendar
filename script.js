@@ -33,7 +33,7 @@ async function getCalendarUrl() {
     }
 }
 
-window.onload = getCalendarUrl();
+window.onload = getCalendarUrl;
 
 function deleteParams() {
     const url = new URL(window.location.href);
