@@ -19,7 +19,6 @@ async function getCalendarUrl() {
                 highlight(element);
                 updateGuide(`<p>登録ボタンを押してください</p>`);
                 updateStatus(`<p><a href=${json.calendarUrl}>カレンダーを登録</a></p>`);
-                deleteParams();
             } else {
                 await sleep(5000);
                 getCalendarUrl();
@@ -28,6 +27,7 @@ async function getCalendarUrl() {
             console.log(e);
             updateStatus(`<p><span style="font-weight:bold;">エラーが発生しました。</span><br>時間をおいてから、<br>もう一度やり直してください。</p>`);
             window.alert("エラー\n時間をおいてからもう一度やり直してください。");
+            deleteParams();
         }
     }
 }
