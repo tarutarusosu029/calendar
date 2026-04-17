@@ -27,6 +27,7 @@ async function getCalendarUrl() {
                 action = "uploadSuccessLog";
                 console.log("fetch");
                 await fetch(api);
+                deleteParams();
             } else {
                 console.log("retry");
                 updateGuide(`<p>新しいカレンダーを作っています...</p>`);
@@ -41,7 +42,6 @@ async function getCalendarUrl() {
             await fetch(`${api}&error=${e}`);
         }
     }
-    deleteParams();
 }
 
 window.onload = getCalendarUrl;
