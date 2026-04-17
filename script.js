@@ -27,6 +27,8 @@ async function getCalendarUrl() {
                 action = "uploadSuccessLog";
                 console.log("fetch");
                 const a = await fetch(api);
+                const aj = a.json();
+                console.log(aj);
                 deleteParams();
             } else {
                 console.log("retry");
@@ -39,7 +41,9 @@ async function getCalendarUrl() {
             window.alert("エラー\n時間をおいてから、もう一度やり直してください。");
             action = "uploadErrorLog";
             console.log("fetch");
-            const b = fetch(`${api}&error=${e}`);
+            const b = await fetch(`${api}&error=${e}`);
+            const bj = b.json();
+            console.log(bj);
         }
     }
 }
