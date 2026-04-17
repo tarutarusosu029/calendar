@@ -1,5 +1,5 @@
 const sleep = (time) => new Promise((resolve) => {
-    setTimeout((resolve, time));
+    setTimeout(resolve, time);
 });
 
 async function getCalendarUrl() {
@@ -8,9 +8,14 @@ async function getCalendarUrl() {
     let userAgent = window.navigator.userAgent.toLowerCase();
     if (userGrade && userClass && userGrade != 0 && userClass != 0) {
         try {
-            const api = `https://script.google.com/macros/s/AKfycbzu83oiW4V8BkKVkwcgB4SyrE4EIf_7F6IwKD70tqO8CbkYehF3JyF1EcRkk83M-cOd/exec?action=getCalendar&userGrade=${userGrade}&userClass=${userClass}&userAgent=${userAgent}`;
+            document.getElementById('userGrade').value = userGrade;
+            document.getElementById('userClass').value = userClass;
+            let action = "getCalendar";
+            let api = `https://script.google.com/macros/s/AKfycbzu83oiW4V8BkKVkwcgB4SyrE4EIf_7F6IwKD70tqO8CbkYehF3JyF1EcRkk83M-cOd/exec?action=${action}&userGrade=${userGrade}&userClass=${userClass}&userAgent=${userAgent}`;
             element = document.getElementById('status');
-            toggleElementHide(element);
+            if (element.classList.contains('hide')) {
+                toggleElementHide(element);
+            }
             updateGuide(`<p>しばらくお待ちください</p>`);
             updateStatus(`<div class="loader"></div>`);
             const res = await fetch(api);
@@ -19,20 +24,32 @@ async function getCalendarUrl() {
                 highlight(element);
                 updateGuide(`<p>登録ボタンを押してください</p>`);
                 updateStatus(`<p><a href=${json.calendarUrl}>カレンダーを登録</a></p>`);
+                action = "uploadSuccessLog";
+                console.log("fetch");
+                console.log(api);
+                const a = await fetch(api);
+                const aj =await a.json();
+                console.log(aj);
                 deleteParams();
             } else {
-                await sleep(5000);
-                getCalendarUrl();
+                console.log("retry");
+                updateGuide(`<p>新しいカレンダーを作っています...</p>`);
+                return getCalendarUrl();
             }
         } catch (e) {
             console.log(e);
             updateStatus(`<p><span style="font-weight:bold;">エラーが発生しました。</span><br>時間をおいてから、<br>もう一度やり直してください。</p>`);
-            window.alert("エラー\n時間をおいてからもう一度やり直してください。");
+            window.alert("エラー\n時間をおいてから、もう一度やり直してください。");
+            action = "uploadErrorLog";
+            console.log("fetch");
+            const b = await fetch(`${api}&error=${e}`);
+            const bj = await b.json();
+            console.log(bj);
         }
     }
 }
 
-window.onload = getCalendarUrl();
+window.onload = getCalendarUrl;
 
 function deleteParams() {
     const url = new URL(window.location.href);
@@ -47,6 +64,7 @@ function getParameter(paramName) {
 function updateStatus(html) {
     document.getElementById("status").innerHTML = html;
 }
+
 function updateGuide(html) {
     document.getElementById("guide").innerHTML = html;
 }
