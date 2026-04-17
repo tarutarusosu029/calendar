@@ -36,7 +36,7 @@ async function getCalendarUrl() {
             updateStatus(`<p><span style="font-weight:bold;">エラーが発生しました。</span><br>時間をおいてから、<br>もう一度やり直してください。</p>`);
             window.alert("エラー\n時間をおいてから、もう一度やり直してください。");
             action = "uploadErrorLog";
-            await fetch(`${api}&e=${e}`);
+            await fetch(`${api}&error=${e}`);
         }
     }
     deleteParams();
