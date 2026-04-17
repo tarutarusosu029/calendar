@@ -25,6 +25,7 @@ async function getCalendarUrl() {
                 updateGuide(`<p>登録ボタンを押してください</p>`);
                 updateStatus(`<p><a href=${json.calendarUrl}>カレンダーを登録</a></p>`);
                 action = "uploadSuccessLog";
+                api = `https://script.google.com/macros/s/AKfycbzu83oiW4V8BkKVkwcgB4SyrE4EIf_7F6IwKD70tqO8CbkYehF3JyF1EcRkk83M-cOd/exec?action=${action}&userGrade=${userGrade}&userClass=${userClass}&userAgent=${userAgent}`;
                 console.log("fetch");
                 console.log(api);
                 const a = await fetch(api);
@@ -41,6 +42,7 @@ async function getCalendarUrl() {
             updateStatus(`<p><span style="font-weight:bold;">エラーが発生しました。</span><br>時間をおいてから、<br>もう一度やり直してください。</p>`);
             window.alert("エラー\n時間をおいてから、もう一度やり直してください。");
             action = "uploadErrorLog";
+            api = `https://script.google.com/macros/s/AKfycbzu83oiW4V8BkKVkwcgB4SyrE4EIf_7F6IwKD70tqO8CbkYehF3JyF1EcRkk83M-cOd/exec?action=${action}&userGrade=${userGrade}&userClass=${userClass}&userAgent=${userAgent}`;
             console.log("fetch");
             b = await fetch(`${api}&error=${e}`);
         }
