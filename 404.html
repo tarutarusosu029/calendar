@@ -16,8 +16,18 @@
     <main>
         <h1>404</h1>
         <p>ページが見つかりません</p>
+        <div style="position: relative;">
+            <img style="margin: 0px; height: 40vh;" class="hide" id="000-img" src="img/000.png">
+        </div>
     </main>
     <footer>
+        <div style="text-align: end;">
+            <label>
+                <input type="checkbox" style="appearance: none;" id="QRcode-box"
+                    onchange="toggleElementHide(document.getElementById('000-img'))"></input>
+                <span class="drop material-icons">castle</span>
+            </label>
+        </div>
         <a href="index.html">トップページ</a>
         <a href="privacy.html">プライバシーポリシー</a>
         <p>このサービスは個人が制作した非公式のサービスです。</p>

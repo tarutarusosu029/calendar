@@ -11,25 +11,23 @@ async function getCalendarUrl() {
             document.getElementById('userGrade').value = userGrade;
             document.getElementById('userClass').value = userClass;
             let action = "getCalendar";
-            let api = `https://script.google.com/macros/s/AKfycbzu83oiW4V8BkKVkwcgB4SyrE4EIf_7F6IwKD70tqO8CbkYehF3JyF1EcRkk83M-cOd/exec?action=${action}&userGrade=${userGrade}&userClass=${userClass}&userAgent=${userAgent}`;
+            let api = `https://script.google.com/macros/s/AKfycbzu83oiW4V8BkKVkwcgB4SyrE4EIf_7F6IwKD70tqO8CbkYehF3JyF1EcRkk83M-cOd/exec`;
+            let apiReqUrl = `${api}?action=${action}&userGrade=${userGrade}&userClass=${userClass}&userAgent=${userAgent}`;
             element = document.getElementById('status');
             if (element.classList.contains('hide')) {
                 toggleElementHide(element);
             }
             updateGuide(`<p>しばらくお待ちください</p>`);
             updateStatus(`<div class="loader"></div>`);
-            const res = await fetch(api);
+            const res = await fetch(apiReqUrl);
             const json = await res.json();
             if (json.success && json.calendarUrl != null) {
                 highlight(element);
                 updateGuide(`<p>登録ボタンを押してください</p>`);
                 updateStatus(`<p><a href=${json.calendarUrl}>カレンダーを登録</a></p>`);
                 action = "uploadSuccessLog";
-                console.log("fetch");
-                console.log(api);
-                const a = await fetch(api);
-                const aj =await a.json();
-                console.log(aj);
+                apiReqUrl = `${api}?action=${action}&userGrade=${userGrade}&userClass=${userClass}&userAgent=${userAgent}`;
+                await fetch(apiReqUrl);
                 deleteParams();
             } else {
                 console.log("retry");
@@ -41,10 +39,8 @@ async function getCalendarUrl() {
             updateStatus(`<p><span style="font-weight:bold;">エラーが発生しました。</span><br>時間をおいてから、<br>もう一度やり直してください。</p>`);
             window.alert("エラー\n時間をおいてから、もう一度やり直してください。");
             action = "uploadErrorLog";
-            console.log("fetch");
-            const b = await fetch(`${api}&error=${e}`);
-            const bj = await b.json();
-            console.log(bj);
+            apiReqUrl = `${api}?action=${action}&userGrade=${userGrade}&userClass=${userClass}&userAgent=${userAgent}&error=${e}`;
+            await fetch(apiReqUrl);
         }
     }
 }
