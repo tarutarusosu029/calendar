@@ -278,8 +278,9 @@ footer a {
 }
 
 .statcounter {
-    display: none;
+    display: block;
+    text-align: end;
+    font-size: 0.5em;
 }
 
-/* ああああ */
 /* ©2026 tarutarusosu029 */
