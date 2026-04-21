@@ -277,9 +277,7 @@ footer a {
 
 .statcounter {
     display: block;
-    text-align: end;
-    margin: 0;
-    font-size: 0.8em;
+    text-align: end !important;
 }
 
 /* ©2026 tarutarusosu029 */
