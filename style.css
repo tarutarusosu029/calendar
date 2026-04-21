@@ -276,7 +276,9 @@ footer a {
 }
 
 .statcounter {
-    align-self: flex-end;
+    display: block;
+    width: 100%;
+    text-align: right;
 }
 
 /* ©2026 tarutarusosu029 */
