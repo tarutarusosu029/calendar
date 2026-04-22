@@ -254,6 +254,10 @@ footer {
     margin-bottom: 0;
 }
 
+footer p {
+    margin: 0;
+}
+
 footer a {
     margin: 0px 2.5%;
 }
