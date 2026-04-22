@@ -41,7 +41,9 @@ async function getCalendarUrl() {
             action = "uploadErrorLog";
             apiReqUrl = `${api}?action=${action}&userGrade=${userGrade}&userClass=${userClass}&userAgent=${userAgent}&error=${e}`;
             await fetch(apiReqUrl);
+            deleteParams();
         }
+        deleteParams();
     }
 }
 
