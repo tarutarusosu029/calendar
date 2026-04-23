@@ -16,8 +16,8 @@ async function getCalendarUrl() {
             element = document.getElementById('status');
             if (element.classList.contains('hide')) {
                 toggleElementHide(element);
+                updateGuide(`<p>しばらくお待ちください</p>`);
             }
-            updateGuide(`<p>しばらくお待ちください</p>`);
             updateStatus(`<div class="loader"></div>`);
             const res = await fetch(apiReqUrl);
             const json = await res.json();
@@ -36,8 +36,9 @@ async function getCalendarUrl() {
             }
         } catch (e) {
             console.log(e);
-            updateStatus(`<p><span style="font-weight:bold;">エラーが発生しました。</span><br>時間をおいてから、<br>もう一度やり直してください。</p>`);
-            window.alert("エラー\n時間をおいてから、もう一度やり直してください。");
+            updateGuide(`<p>時間をおいてからもう一度やり直してください</p>`);
+            updateStatus(`<p>エラーが発生しました</p>`);
+            window.alert("エラー\n時間をおいてから\nもう一度やり直してください");
             action = "uploadErrorLog";
             apiReqUrl = `${api}?action=${action}&userGrade=${userGrade}&userClass=${userClass}&userAgent=${userAgent}&error=${e}`;
             await fetch(apiReqUrl);
