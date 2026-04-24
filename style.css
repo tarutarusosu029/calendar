@@ -184,6 +184,27 @@ a {
     background-clip: text;
 }
 
+.loader-error {
+    color: #FF7777;
+    margin: 15px auto;
+    display: inline-block;
+    width: 90%;
+    border-radius: 300px;
+    background: linear-gradient(135deg, #0000 calc(50% - 0.5em), #FF7777 0 calc(50% + 0.5em), #0000 0) right/300% 100%;
+    animation: l22 2.5s infinite;
+}
+
+.loader-error::before {
+    content: "エラーが発生しました";
+    color: #0000;
+    padding: 0 0.5px;
+    background: inherit;
+    background-image: linear-gradient(135deg, #FF7777 calc(50% - 0.5em), #0000 0 calc(50% + 0.5em), #FF7777 0);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+
 @keyframes l22 {
     100% {
         background-position: left
