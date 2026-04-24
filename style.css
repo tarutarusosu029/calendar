@@ -191,7 +191,7 @@ a {
     width: 90%;
     border-radius: 300px;
     background: linear-gradient(135deg, #0000 calc(50% - 0.5em), #FF7777 0 calc(50% + 0.5em), #0000 0) right/300% 100%;
-    animation: l22 2.5s infinite;
+    animation: l22 2s 4;
 }
 
 .loader-error::before {
