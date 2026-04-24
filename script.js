@@ -53,6 +53,8 @@ window.onload = getCalendarUrl;
 function deleteParams() {
     const url = new URL(window.location.href);
     window.history.replaceState({}, '', url.pathname);
+    document.getElementById('userGrade').value = 0;
+    document.getElementById('userClass').value = 0;
 }
 
 function getParameter(paramName) {
