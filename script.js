@@ -37,7 +37,7 @@ async function getCalendarUrl() {
         } catch (e) {
             console.log(e);
             updateGuide(`<p>時間をおいてからもう一度やり直してください</p>`);
-            updateStatus(`<p>エラーが発生しました</p>`);
+            updateStatus(`<p style="color:#ff7777;">エラーが発生しました</p>`);
             window.alert("エラー\n時間をおいてから\nもう一度やり直してください");
             action = "uploadErrorLog";
             apiReqUrl = `${api}?action=${action}&userGrade=${userGrade}&userClass=${userClass}&userAgent=${userAgent}&error=${e}`;
