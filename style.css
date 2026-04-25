@@ -204,7 +204,6 @@ a {
     background-clip: text;
 }
 
-
 @keyframes l22 {
     100% {
         background-position: left
@@ -294,14 +293,6 @@ footer a {
 
 .privacy li {
     text-align: start;
-}
-
-.statcounter {
-    display: none;
-
-    margin: 0;
-    padding: 0;
-    font-size: 0.5em;
 }
 
 /* ©2026 tarutarusosu029 */
