@@ -216,6 +216,11 @@ a {
         5px 5px 50px 0px #0000 !important;
 }
 
+.highlight-error {
+    box-shadow: -5px -5px 30px 0px rgba(255, 175, 200, 0.4),
+        5px 5px 50px 0px #0000 !important;
+}
+
 .hide {
     display: none !important;
 }

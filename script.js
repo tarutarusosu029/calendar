@@ -11,7 +11,7 @@ async function getCalendarUrl() {
             document.getElementById('userGrade').value = userGrade;
             document.getElementById('userClass').value = userClass;
             let action = "getCalendar";
-            let api = `https://script.google.com/macros/s/AKfycbzu83oiW4V8BkKVkwcgB4SyrE4EIf_7F6IwKD70tqO8CbkYehF3JyF1EcRkk83M-cOd/exec`;
+            let api = `Xhttps://script.google.com/macros/s/AKfycbzu83oiW4V8BkKVkwcgB4SyrE4EIf_7F6IwKD70tqO8CbkYehF3JyF1EcRkk83M-cOd/exec`;
             let apiReqUrl = `${api}?action=${action}&userGrade=${userGrade}&userClass=${userClass}&userAgent=${userAgent}`;
             element = document.getElementById('status');
             if (element.classList.contains('hide')) {
@@ -38,6 +38,7 @@ async function getCalendarUrl() {
             console.log(e);
             updateGuide(`<p>時間をおいてからもう一度やり直してください</p>`);
             updateStatus(`<div class="loader-error"></div>`);
+            errorHighlight(element);
             window.alert("エラー\n時間をおいてから\nもう一度やり直してください");
             action = "uploadErrorLog";
             apiReqUrl = `${api}?action=${action}&userGrade=${userGrade}&userClass=${userClass}&userAgent=${userAgent}&error=${e}`;
@@ -72,6 +73,10 @@ function updateGuide(html) {
 
 function highlight(element) {
     return element.classList.add('highlight');
+}
+
+function errorHighlight(element) {
+    return element.classList.add('highlight-error');
 }
 
 function toggleElementHide(element) {
