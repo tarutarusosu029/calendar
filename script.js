@@ -16,7 +16,7 @@ async function getCalendarUrl() {
             element = document.getElementById('status');
             if (element.classList.contains('hide')) {
                 toggleElementHide(element);
-                updateGuide(`<p>しばらくお待ちください</p>`);
+                updateGuide(`<p>カレンダーを探しています...</p>`);
             }
             updateStatus(`<div class="loader"></div>`);
             const res = await fetch(apiReqUrl);
