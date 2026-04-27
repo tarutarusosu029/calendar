@@ -159,6 +159,7 @@ function choose(arr) {
 window.onload = function () {
     console.info(choose([
         'こんにちは🌱',
+        '使ってくれてありがとう🌱',
         'いたずらしないでね😖',
         'バグを見つけたらこっそり教えてね🤐',
         '中身が気になるの？🤔',
