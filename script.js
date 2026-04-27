@@ -152,6 +152,10 @@ accordions.forEach(function (accordion) {
     initializeDetailsAccordion(accordion)
 })
 
+function choose(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
 window.onload = function () {
     console.info(choose([
         'こんにちは🌱',
