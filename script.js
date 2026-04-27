@@ -152,4 +152,14 @@ accordions.forEach(function (accordion) {
     initializeDetailsAccordion(accordion)
 })
 
+window.onload = function () {
+    console.info(choose([
+        'こんにちは🌱',
+        'いたずらしないでね😖',
+        'バグを見つけたらこっそり教えてね🤐',
+        '中身が気になるの？🤔',
+        'あんまりみないでね🫣',
+    ]));
+}
+
 //©2026 tarutarusosu029
