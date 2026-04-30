@@ -49,8 +49,6 @@ async function getCalendarUrl() {
     }
 }
 
-window.onload = getCalendarUrl;
-
 function deleteParams() {
     const url = new URL(window.location.href);
     window.history.replaceState({}, '', url.pathname);
@@ -157,6 +155,7 @@ function choose(arr) {
 }
 
 window.onload = function () {
+    getCalendarUrl();
     console.info(choose([
         'こんにちは🌱',
         '使ってくれてありがとう🌱',
