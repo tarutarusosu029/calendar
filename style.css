@@ -31,6 +31,7 @@ header {
 }
 
 header pre {
+    transform: translateX(-5em);
     display: inline-block;
     text-align: left;
     font-family: monospace;
