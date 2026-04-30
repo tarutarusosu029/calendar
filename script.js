@@ -82,7 +82,7 @@ function toggleElementHide(element) {
     classes.forEach(className => element.classList.toggle(className));
 }
 
-const accordions = document.querySelectorAll('.accordion')
+const accordions = document.querySelectorAll('.accordion');
 
 function initializeDetailsAccordion(details) {
     const summary = details.querySelector('summary')
