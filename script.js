@@ -32,7 +32,6 @@ async function getCalendarUrl() {
             } else {
                 console.log("retry");
                 updateGuide(`<p>新しいカレンダーを作っています...</p>`);
-                await sleep(1000);
                 return getCalendarUrl();
             }
         } catch (e) {
