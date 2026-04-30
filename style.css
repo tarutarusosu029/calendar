@@ -30,11 +30,11 @@ header {
 }
 
 header pre {
-    transform: translateX(-6em);
+    transform: translateX(-5em);
     display: inline-block;
     text-align: left;
     font-family: monospace;
-    font-size: 0.5em;
+    font-size: 10px;
     white-space: pre;
     line-height: 0.5;
 }
