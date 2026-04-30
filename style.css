@@ -21,7 +21,8 @@ body {
 
 header {
     width: 100%;
-    text-align: left;
+    display: flex;
+    justify-content: center;
     background: radial-gradient(#D5E0E8, #E8F2F7);
     border: 2px solid #DEE9F3;
     box-shadow:
@@ -30,13 +31,13 @@ header {
 }
 
 header pre {
-    transform: translateX(-5em);
     display: inline-block;
     text-align: left;
     font-family: monospace;
-    font-size: 60%;
+    font-size: clamp(8px, 2vw, 14px);
     white-space: pre;
     line-height: 0.5;
+    /* transform: translateX(-5em); */
 }
 
 h1 {
