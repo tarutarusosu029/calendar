@@ -37,7 +37,7 @@ header pre {
     font-size: clamp(4px, 1vw, 8px);
     white-space: pre;
     line-height: 0.5;
-    transform: translateX(-6em);
+    transform: translateX(-8em);
 }
 
 h1 {
