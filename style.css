@@ -34,7 +34,7 @@ header pre {
     display: inline-block;
     text-align: left;
     font-family: monospace;
-    font-size: 10px;
+    font-size: 0.25em;
     white-space: pre;
     line-height: 0.5;
 }
