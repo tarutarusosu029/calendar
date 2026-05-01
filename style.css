@@ -54,7 +54,7 @@ main {
     padding: 2vh 3vw;
     width: 100%;
     max-width: 500px;
-    border-radius: 30px;
+    border-radius: 50%;
     background: radial-gradient(#D5E0E8, #E8F2F7);
     border: 2px solid #DEE9F3;
     box-shadow:
@@ -73,7 +73,7 @@ main {
     padding: 2vh 3vw;
     width: 90vw;
     max-width: 500px;
-    border-radius: 30px;
+    border-radius: 50%;
     background: radial-gradient(#D5E0E8, #E8F2F7);
     border: 2px solid #DEE9F3;
     box-shadow:
@@ -95,7 +95,7 @@ summary::before {
     margin: 10px auto;
     width: 90vw;
     max-width: 500px;
-    border-radius: 30px;
+    border-radius: 50%;
     background: radial-gradient(#D5E0E8, #E8F2F7);
     border: 2px solid #DEE9F3;
     box-shadow:
@@ -132,7 +132,7 @@ h2 {
 .drop {
     aspect-ratio: 1/1;
     padding: 2%;
-    border-radius: 100%;
+    border-radius: 50%;
     background: radial-gradient(#D5E0E8, #E8F2F7);
     border: 2px solid #DEE9F3;
     box-shadow:
@@ -157,7 +157,7 @@ span.drop.material-icons {
 select {
     color: #6C7B91;
     padding: 10px 12px;
-    border-radius: 50px;
+    border-radius: 50%;
     border: none;
     font-size: 16px;
     background: radial-gradient(#D5E0E8, #E8F2F7);
@@ -169,7 +169,7 @@ select {
 
 input[type=submit] {
     padding: 8px 20px;
-    border-radius: 50px;
+    border-radius: 50%;
     border: none;
     background: #6C7B91;
     color: white;
@@ -191,7 +191,7 @@ a {
     margin: 15px auto;
     display: inline-block;
     width: 90%;
-    border-radius: 300px;
+    border-radius: 50%;
     background: linear-gradient(135deg, #0000 calc(50% - 0.5em), #6C7B91 0 calc(50% + 0.5em), #0000 0) right/300% 100%;
     animation: l22 2.5s infinite;
 }
@@ -211,7 +211,7 @@ a {
     margin: 15px auto;
     display: inline-block;
     width: 90%;
-    border-radius: 300px;
+    border-radius: 50%;
     background: linear-gradient(135deg, #0000 calc(50% - 0.5em), #FF7777 0 calc(50% + 0.5em), #0000 0) right/300% 100%;
     animation: l22 2.5s 4;
 }
@@ -284,7 +284,7 @@ a {
     margin: 10px auto;
     width: 100%;
     max-width: 500px;
-    border-radius: 30px;
+    border-radius: 50%;
     background: radial-gradient(#D5E0E8, #E8F2F7);
     border: 2px solid #DEE9F3;
     box-shadow:
