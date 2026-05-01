@@ -19,27 +19,6 @@ body {
     background: radial-gradient(#E6EFF6, #C9DCEA);
 }
 
-header {
-    width: 100%;
-    display: flex;
-    justify-content: left;
-    background: radial-gradient(#D5E0E8, #E8F2F7);
-    border: 2px solid #DEE9F3;
-    box-shadow:
-        -5px -5px 30px rgba(255, 255, 255, 0.8),
-        5px 5px 50px rgba(0, 40, 100, 0.3);
-}
-
-header pre {
-    display: inline-block;
-    text-align: left;
-    font-family: monospace;
-    font-size: clamp(4px, 1vw, 8px);
-    white-space: pre;
-    line-height: 0.5;
-    transform: translateX(-7em);
-}
-
 h1 {
     margin-top: 10px;
     margin-bottom: 0;
@@ -49,247 +28,18 @@ main {
     flex: 1;
 }
 
-.card {
-    margin: 10px auto;
-    padding: 2vh 3vw;
-    width: 100%;
-    max-width: 500px;
-    border-radius: 50%;
-    background: radial-gradient(#D5E0E8, #E8F2F7);
-    border: 2px solid #DEE9F3;
-    box-shadow:
-        -5px -5px 30px rgba(255, 255, 255, 0.8),
-        5px 5px 50px rgba(0, 40, 100, 0.3);
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 5px 0px;
 }
 
-.summary {
-    display: block flow;
-    cursor: pointer;
-    text-indent: -1em;
-    padding-left: 1em;
-    word-break: auto-phrase;
-
-    margin: 10px auto;
-    padding: 2vh 3vw;
-    width: 90vw;
-    max-width: 500px;
-    border-radius: 50%;
-    background: radial-gradient(#D5E0E8, #E8F2F7);
-    border: 2px solid #DEE9F3;
-    box-shadow:
-        -5px -5px 30px rgba(255, 255, 255, 0.8),
-        5px 5px 50px rgba(0, 40, 100, 0.3);
-
-    &::-webkit-details-marker {
-        display: none;
-    }
-}
-
-summary::before {
-    content: "Q.";
-}
-
-.panel {
-    display: block grid;
-    transition: grid-template-rows 0.5s;
-    margin: 10px auto;
-    width: 90vw;
-    max-width: 500px;
-    border-radius: 50%;
-    background: radial-gradient(#D5E0E8, #E8F2F7);
-    border: 2px solid #DEE9F3;
-    box-shadow:
-        -5px -5px 30px rgba(255, 255, 255, 0.8),
-        5px 5px 50px rgba(0, 40, 100, 0.3);
-}
-
-.inner {
-    overflow: hidden;
-}
-
-.inner p {
-    margin: 5%;
-    text-align: start;
-    padding-left: 1.5em;
-    word-break: auto-phrase;
-}
-
-.inner p::before {
-    content: "A.";
-    margin-left: -1.0em;
-}
-
-.inner p .material-icons {
-    font-size: 1.2em;
-    vertical-align: middle;
-    display: inline-block;
-}
-
-h2 {
-    margin-top: 2em;
-}
-
-.drop {
-    aspect-ratio: 1/1;
-    padding: 2%;
-    border-radius: 50%;
-    background: radial-gradient(#D5E0E8, #E8F2F7);
-    border: 2px solid #DEE9F3;
-    box-shadow:
-        -5px -5px 30px rgba(255, 255, 255, 0.9),
-        5px 5px 50px rgba(0, 40, 100, 0.4);
-}
-
-span.drop.material-icons {
-    padding: 0.25em;
-    font-size: 3em;
-}
-
-
-.form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    padding: 10px 0;
-}
-
-select {
-    color: #6C7B91;
-    padding: 10px 12px;
-    border-radius: 50%;
-    border: none;
-    font-size: 16px;
-    background: radial-gradient(#D5E0E8, #E8F2F7);
-    border: 2px solid #DEE9F3;
-    box-shadow:
-        -5px -5px 30px rgba(255, 255, 255, 0.8),
-        5px 5px 50px rgba(0, 40, 100, 0.3);
-}
-
-input[type=submit] {
-    padding: 8px 20px;
-    border-radius: 50%;
-    border: none;
-    background: #6C7B91;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-a {
-    color: #6C7B91;
-}
-
-#status a {
-    color: #6C7B91;
-    text-decoration: none;
-}
-
-.loader {
-    color: #6C7B91;
-    margin: 15px auto;
-    display: inline-block;
-    width: 90%;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #0000 calc(50% - 0.5em), #6C7B91 0 calc(50% + 0.5em), #0000 0) right/300% 100%;
-    animation: l22 2.5s infinite;
-}
-
-.loader::before {
-    content: "読み込み中...";
-    color: #0000;
-    padding: 0 0.5px;
-    background: inherit;
-    background-image: linear-gradient(135deg, #6C7B91 calc(50% - 0.5em), #0000 0 calc(50% + 0.5em), #6C7B91 0);
-    -webkit-background-clip: text;
-    background-clip: text;
-}
-
-.loader-error {
-    color: #FF7777;
-    margin: 15px auto;
-    display: inline-block;
-    width: 90%;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #0000 calc(50% - 0.5em), #FF7777 0 calc(50% + 0.5em), #0000 0) right/300% 100%;
-    animation: l22 2.5s 4;
-}
-
-.loader-error::before {
-    content: "エラーが発生しました";
-    color: #0000;
-    padding: 0 0.5px;
-    background: inherit;
-    background-image: linear-gradient(135deg, #FF7777 calc(50% - 0.5em), #0000 0 calc(50% + 0.5em), #FF7777 0);
-    -webkit-background-clip: text;
-    background-clip: text;
-}
-
-@keyframes l22 {
-    100% {
-        background-position: left
-    }
-}
-
-.highlight {
-    box-shadow: -5px -5px 30px 0px rgba(100, 200, 255, 0.4),
-        5px 5px 50px 0px #0000 !important;
-}
-
-.highlight-error {
-    box-shadow:
-        -5px -5px 30px rgba(255, 119, 119, 0.8),
-        5px 5px 50px rgba(255, 255, 255, 0.3) !important;
-}
-
-.hide {
-    display: none !important;
-}
-
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: bulr(10px);
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0 0 0 / 60%);
-}
-
-.anim-box.popup.is-animated {
-    animation: popup 1.0s 1 cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-@keyframes popup {
-    0% {
-        transform: translateY(-40px) scale(0.8);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0) scale(1.0);
-    }
-
-    80%,
-    100% {
-        opacity: 1;
-    }
-}
-
-#status {
-    margin: 10px auto;
-    width: 100%;
-    max-width: 500px;
-    border-radius: 50%;
-    background: radial-gradient(#D5E0E8, #E8F2F7);
-    border: 2px solid #DEE9F3;
-    box-shadow:
-        -5px -5px 30px rgba(255, 255, 255, 0.8),
-        5px 5px 50px rgba(0, 40, 100, 0.3);
+.parent div {
+    width: 3em;
+    height: 2em;
+    background-color: #FF000055;
 }
 
 footer {
@@ -303,24 +53,6 @@ footer p {
 
 footer a {
     margin: 0px 2.5%;
-}
-
-.privacy {
-    margin: 5vw;
-}
-
-.privacy h2 {
-    font-size: 1.25em;
-    margin: 0px;
-}
-
-.privacy p {
-    margin: 5%;
-    text-align: start;
-}
-
-.privacy li {
-    text-align: start;
 }
 
 /* ©2026 tarutarusosu029 */
