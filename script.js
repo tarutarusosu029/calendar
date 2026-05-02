@@ -70,8 +70,8 @@ function updateGuide(html) {
 }
 
 function submitBtnDisabled() {
-    document.getElementById('submitBtn').addEventListener('click', function () {
-        this.disabled = true;
+    const btn = document.getElementById('submitBtn').addEventListener('click', function () {
+        btn.disabled = true;
     });
 }
 
