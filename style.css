@@ -22,7 +22,8 @@ body {
 header {
     width: 100%;
     display: flex;
-    justify-content: left;
+    /* justify-content: left; */
+    text-align: left;
     background: radial-gradient(#D5E0E8, #E8F2F7);
     border: 2px solid #DEE9F3;
     box-shadow:
@@ -30,14 +31,9 @@ header {
         5px 5px 50px rgba(0, 40, 100, 0.3);
 }
 
-header pre {
-    display: inline-block;
-    text-align: left;
-    font-family: monospace;
-    font-size: clamp(4px, 1vw, 8px);
-    white-space: pre;
-    line-height: 0.5;
-    transform: translateX(-7em);
+header .logo {
+    margin: 1%;
+    width: 50%;
 }
 
 h1 {
