@@ -21,6 +21,7 @@ async function getCalendarUrl() {
             updateStatus(`<div class="loader"></div>`);
             const res = await fetch(apiReqUrl);
             const json = await res.json();
+            submitBtnDisabled();
             if (json.success && json.calendarUrl != null) {
                 highlight(element);
                 updateGuide(`<p>登録ボタンを押してください</p>`);
@@ -66,6 +67,12 @@ function updateStatus(html) {
 
 function updateGuide(html) {
     document.getElementById("guide").innerHTML = html;
+}
+
+function submitBtnDisabled() {
+    document.getElementById('submitBtn').addEventListener('click', function () {
+        this.disabled = true;
+    });
 }
 
 function highlight(element) {
