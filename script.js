@@ -20,8 +20,8 @@ async function getCalendarUrl() {
                 updateGuide(`<p>カレンダーを探しています...</p>`);
             }
             updateStatus(`<div class="loader"></div>`);
-            const json = await res.json();
             const res = await fetch(apiReqUrl);
+            const json = await res.json();
             if (json.success && json.calendarUrl != null) {
                 highlight(element);
                 updateGuide(`<p>登録ボタンを押してください</p>`);
