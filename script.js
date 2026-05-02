@@ -70,9 +70,7 @@ function updateGuide(html) {
 }
 
 function submitBtnDisabled() {
-    const btn = document.getElementById('submitBtn').addEventListener('click', function () {
-        btn.disabled = true;
-    });
+    document.getElementById('submitBtn').disabled = true;
 }
 
 function highlight(element) {
