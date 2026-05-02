@@ -7,6 +7,7 @@ async function getCalendarUrl() {
     let userClass = getParameter("userClass");
     let userAgent = window.navigator.userAgent.toLowerCase();
     if (userGrade && userClass && userGrade != 0 && userClass != 0) {
+        submitBtnDisabled();
         try {
             document.getElementById('userGrade').value = userGrade;
             document.getElementById('userClass').value = userClass;
@@ -19,9 +20,8 @@ async function getCalendarUrl() {
                 updateGuide(`<p>カレンダーを探しています...</p>`);
             }
             updateStatus(`<div class="loader"></div>`);
-            const res = await fetch(apiReqUrl);
             const json = await res.json();
-            submitBtnDisabled();
+            const res = await fetch(apiReqUrl);
             if (json.success && json.calendarUrl != null) {
                 highlight(element);
                 updateGuide(`<p>登録ボタンを押してください</p>`);
@@ -70,8 +70,8 @@ function updateGuide(html) {
 }
 
 function submitBtnDisabled() {
-    document.getElementById('submitBtn').addEventListener('click', function () {
-        this.disabled = true;
+    const btn = document.getElementById('submitBtn').addEventListener('click', function () {
+        btn.disabled = true;
     });
 }
 
