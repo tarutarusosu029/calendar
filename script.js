@@ -28,8 +28,8 @@ async function getCalendarUrl() {
                 updateStatus(`<p><a href=${json.calendarUrl}>カレンダーを登録</a></p>`);
                 action = "uploadSuccessLog";
                 apiReqUrl = `${api}?action=${action}&userGrade=${userGrade}&userClass=${userClass}&userAgent=${userAgent}`;
-                deleteParams();
                 await fetch(apiReqUrl);
+                deleteParams();
             } else {
                 console.log("retry");
                 updateGuide(`<p>新しいカレンダーを作っています...</p>`);
@@ -43,8 +43,8 @@ async function getCalendarUrl() {
             window.alert("エラー\n時間をおいてから\nもう一度やり直してください");
             action = "uploadErrorLog";
             apiReqUrl = `${api}?action=${action}&userGrade=${userGrade}&userClass=${userClass}&userAgent=${userAgent}&error=${e}`;
-            deleteParams();
             await fetch(apiReqUrl);
+            deleteParams();
         }
     }
 }
