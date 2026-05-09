@@ -228,7 +228,7 @@ a {
 }
 
 .highlight {
-    box-shadow: -5px -5px 30px 0px rgba(230, 200, 200, 0.8), 5px 5px 50px 0px rgba(255, 255, 0, 0.3) !important;
+    box-shadow: -5px -5px 30px 0px rgba(255, 200, 200, 0.8), 5px 5px 50px 0px rgba(200, 200, 0, 0.3) !important;
 }
 
 .highlight-error {
