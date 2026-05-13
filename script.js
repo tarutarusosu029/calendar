@@ -27,6 +27,7 @@ async function getCalendarUrl() {
                 highlight(element);
                 updateGuide(`<p>登録ボタンを押してください</p>`);
                 updateStatus(`<p><a href=${json.calendarUrl}>カレンダーを登録</a></p>`);
+                window.location.href = `${json.calendarUrl}`;
                 action = "uploadSuccessLog";
                 apiReqUrl = `${api}?action=${action}&userGrade=${userGrade}&userClass=${userClass}&userAgent=${userAgent}`;
                 await fetch(apiReqUrl);
