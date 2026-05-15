@@ -23,11 +23,12 @@ async function getCalendarUrl() {
             const res = await fetch(apiReqUrl);
             const json = await res.json();
             if (json.success && json.calendarUrl != null) {
+                deleteParams();
                 highlight(element);
                 updateGuide(`<p>登録ボタンを押してください</p>`);
                 updateStatus(`<p><a href=${json.calendarUrl}>カレンダーを登録</a></p>`);
+                window.location.href = `${json.calendarUrl}`;
                 action = "uploadSuccessLog";
-                deleteParams();
                 apiReqUrl = `${api}?action=${action}&userGrade=${userGrade}&userClass=${userClass}&userAgent=${userAgent}`;
                 await fetch(apiReqUrl);
             } else {
@@ -36,6 +37,7 @@ async function getCalendarUrl() {
                 return getCalendarUrl();
             }
         } catch (e) {
+            deleteParams();
             console.log(e);
             updateGuide(`<p>時間をおいてからもう一度やり直してください</p>`);
             updateStatus(`<div class="loader-error"></div>`);
@@ -43,7 +45,6 @@ async function getCalendarUrl() {
             window.alert("エラー\n時間をおいてから\nもう一度やり直してください");
             action = "uploadErrorLog";
             apiReqUrl = `${api}?action=${action}&userGrade=${userGrade}&userClass=${userClass}&userAgent=${userAgent}&error=${e}`;
-            deleteParams();
             await fetch(apiReqUrl);
         }
     }
