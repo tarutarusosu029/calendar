@@ -317,4 +317,16 @@ footer a {
     text-align: start;
 }
 
+.img-404 {
+    margin-top: 10%;
+    width: 50vw;
+    max-width: 200px;
+}
+
+.img-notfound {
+    margin: 2%;
+    width: 80vw;
+    max-width: 400px;
+}
+
 /* ©2026 tarutarusosu029 */
