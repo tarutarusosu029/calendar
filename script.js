@@ -160,6 +160,7 @@ function choose(arr) {
 
 window.onload = function () {
     getCalendarUrl();
+    document.getElementById("year").textContent = new Date().getFullYear();
     console.info(choose([
         'こんにちは🌱',
         '使ってくれてありがとう🌱',
