@@ -32,9 +32,13 @@ async function getCalendarUrl() {
                 apiReqUrl = `${api}?action=${action}&userGrade=${userGrade}&userClass=${userClass}&userAgent=${userAgent}`;
                 await fetch(apiReqUrl);
             } else {
-                console.log("retry");
-                updateGuide(`<p>新しいカレンダーを作っています...</p>`);
-                return getCalendarUrl();
+                if (json.message != 'Bad request') {
+                    console.log("retry");
+                    updateGuide(`<p>新しいカレンダーを作っています...</p>`);
+                    return getCalendarUrl();
+                } else {
+                    throw (new Error());
+                }
             }
         } catch (e) {
             deleteParams();
