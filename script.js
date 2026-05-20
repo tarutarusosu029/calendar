@@ -6,6 +6,7 @@ async function getCalendarUrl() {
     let userGrade = getParameter("userGrade");
     let userClass = getParameter("userClass");
     let userAgent = window.navigator.userAgent.toLowerCase();
+    let retryCount = 0;
     if (userGrade && userClass && userGrade != 0 && userClass != 0) {
         submitBtnDisabled();
         try {
@@ -33,8 +34,12 @@ async function getCalendarUrl() {
                 await fetch(apiReqUrl);
             } else {
                 if (json.message != 'Bad request') {
+                    retryCount++;
                     console.log("retry");
                     updateGuide(`<p>新しいカレンダーを作っています...</p>`);
+                    if (retryCount > 2) {
+                        throw (new Error());
+                    }
                     return getCalendarUrl();
                 } else {
                     throw (new Error());
