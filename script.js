@@ -33,7 +33,7 @@ async function getCalendarUrl() {
                 apiReqUrl = `${api}?action=${action}&userGrade=${userGrade}&userClass=${userClass}&userAgent=${userAgent}`;
                 await fetch(apiReqUrl);
             } else {
-                if (json.message != 'Bad request') {
+                if (json.success == false || json.message != 'Bad request') {
                     retryCount++;
                     console.log(retryCount);
                     console.log("retry");
