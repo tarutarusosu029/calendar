@@ -39,8 +39,9 @@ async function getCalendarUrl() {
                     updateGuide(`<p>新しいカレンダーを作っています...</p>`);
                     if (retryCount > 2) {
                         throw (new Error());
+                    } else {
+                        return getCalendarUrl();
                     }
-                    return getCalendarUrl();
                 } else {
                     throw (new Error());
                 }
