@@ -2,11 +2,11 @@ const sleep = (time) => new Promise((resolve) => {
     setTimeout(resolve, time);
 });
 
+let retryCount = 0;
 async function getCalendarUrl() {
     let userGrade = getParameter("userGrade");
     let userClass = getParameter("userClass");
     let userAgent = window.navigator.userAgent.toLowerCase();
-    let retryCount = 0;
     if (userGrade && userClass && userGrade != 0 && userClass != 0) {
         submitBtnDisabled();
         try {
