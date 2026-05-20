@@ -35,9 +35,10 @@ async function getCalendarUrl() {
             } else {
                 if (json.message != 'Bad request') {
                     retryCount++;
+                    console.log(retryCount);
                     console.log("retry");
                     updateGuide(`<p>新しいカレンダーを作っています...</p>`);
-                    if (retryCount > 2) {
+                    if (retryCount >= 2) {
                         throw (new Error());
                     } else {
                         return getCalendarUrl();
