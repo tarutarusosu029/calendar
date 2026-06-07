@@ -2,6 +2,7 @@ const sleep = (time) => new Promise((resolve) => {
     setTimeout(resolve, time);
 });
 
+let retryCount = 0;
 async function getCalendarUrl() {
     let userGrade = getParameter("userGrade");
     let userClass = getParameter("userClass");
@@ -32,10 +33,16 @@ async function getCalendarUrl() {
                 apiReqUrl = `${api}?action=${action}&userGrade=${userGrade}&userClass=${userClass}&userAgent=${userAgent}`;
                 await fetch(apiReqUrl);
             } else {
-                if (json.message != 'Bad request') {
+                if (json.success == false || json.message != 'Bad request') {
+                    retryCount++;
+                    console.log(retryCount);
                     console.log("retry");
                     updateGuide(`<p>新しいカレンダーを作っています...</p>`);
-                    return getCalendarUrl();
+                    if (retryCount >= 2) {
+                        throw (new Error());
+                    } else {
+                        return getCalendarUrl();
+                    }
                 } else {
                     throw (new Error());
                 }
